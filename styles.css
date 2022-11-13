@@ -1,0 +1,9 @@
+#grid {
+    display: grid;
+}
+
+.grid-item {
+    background-color: lightgreen;
+    grid-column-start: 1;
+    grid-column-end: 8;
+}
