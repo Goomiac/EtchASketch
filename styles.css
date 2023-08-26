@@ -1,9 +1,25 @@
-#grid {
+html, body {
+    height: 100%;
+    width: 100%;
+    
+}
+
+.container {
+    width: fit-content;
     display: grid;
+    align-items: center;
+    grid-template-columns:repeat(32, 20px);
+    text-align: center;
+    justify-content: center;
 }
 
 .grid-item {
-    background-color: lightgreen;
-    grid-column-start: 1;
-    grid-column-end: 8;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.grid-item:hover {
+    background-color: black;
 }
