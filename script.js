@@ -11,20 +11,9 @@ function drawGrid(size) {
         /*row.innerText = `${i+1},${j+1}`;*/
         container.appendChild(cell).className = "grid-item";
     }
-}
-
-let size = 84;
-drawGrid(size);
-
-function changeGridSize() {
-    let newSize = prompt("Input new grid size: ");
-    container.innerHTML = "";
-    drawGrid(newSize);
-}
-
-const gridItems = document.querySelectorAll('.grid-item');
-let isOn = false;
-gridItems.forEach(item => {
+    const gridItems = document.querySelectorAll('.grid-item');
+    let isOn = false;
+    gridItems.forEach(item => {
     item.addEventListener('click', function startDrawing(event) {
         isOn = !isOn;
     })
@@ -32,3 +21,18 @@ gridItems.forEach(item => {
         if (isOn) {item.setAttribute('style', 'background-color:black;')};
     });
 });
+}
+
+let size = 84;
+drawGrid(size);
+
+function changeGridSize() {
+    let newSize = 0;
+    newSize = prompt("Input new grid size: ");
+    if (newSize > 128) {
+        alert("Size is too big, maximum is 128! Try again.");
+        return;
+    };
+    container.innerHTML = "";
+    drawGrid(newSize);
+}
